@@ -95,5 +95,34 @@ This query identifies processes attempting to access LSASS memory and highlights
 
 This technique is commonly used by attackers to obtain credentials from system memory and move laterally through a network.
 
+---
 
+# SOC Investigation Workflow
+
+If this alert were triggered in a real Security Operations Center (SOC), an analyst would typically follow an investigation process similar to the steps below.
+
+### 1. Triage
+The analyst identifies that **Sysmon Event ID 10** indicates a process attempting to access LSASS memory.
+
+Since LSASS stores authentication material, unauthorized access is considered highly suspicious.
+
+### 2. Investigation
+The analyst reviews the event details and confirms that **procdump64.exe** accessed the LSASS process.
+
+This behavior is commonly associated with credential dumping techniques.
+
+### 3. Scope Analysis
+The analyst searches across the SIEM for similar activity on other systems to determine whether the behavior is isolated or part of a larger compromise.
+
+Example investigation query:
+
+
+### 4. Containment
+If malicious activity is confirmed, the affected endpoint would be isolated from the network to prevent lateral movement.
+
+### 5. Eradication
+Security teams would remove attacker tools, reset compromised credentials, and analyze the LSASS dump file to understand what data may have been exposed.
+
+### 6. Lessons Learned
+Detection rules may be improved to better detect suspicious LSASS access in the future.
 
