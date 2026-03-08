@@ -39,6 +39,7 @@ To simulate credential dumping, the Sysinternals **ProcDump** utility was used t
 The following command was executed on the Windows endpoint:
 
 procdump64.exe -ma lsass.exe lsass.dmp
+<img width="624" height="195" alt="procdump_lsass_execution" src="https://github.com/user-attachments/assets/60ce29de-3262-4e6a-998e-a9a0d6b5d27b" />
 
 This command forces a full memory dump of the **Local Security Authority Subsystem Service (LSASS)** process.
 
@@ -126,3 +127,14 @@ Security teams would remove attacker tools, reset compromised credentials, and a
 ### 6. Lessons Learned
 Detection rules may be improved to better detect suspicious LSASS access in the future.
 
+### Splunk Log Ingestion Verification
+<img width="624" height="384" alt="splunk_log_ingestion_verification" src="https://github.com/user-attachments/assets/85163b4b-46fa-43c4-8d9b-4667a56e04e7" />
+
+### Sysmon Event Statistics
+<img width="624" height="300" alt="splunk_sysmon_event_statistics" src="https://github.com/user-attachments/assets/5e1224ee-60d8-4cdc-bdea-249cca51b4d5" />
+
+### Sysmon Event ID 10 – LSASS Access
+<img width="624" height="301" alt="sysmon_event10_lsass_detection" src="https://github.com/user-attachments/assets/24c6f212-ee95-4c26-8a5f-3d6efb558ada" />
+
+### Splunk Detection Results
+<img width="624" height="309" alt="splunk_lsass_event_results" src="https://github.com/user-attachments/assets/c9018bfa-edfc-4ce1-a4b1-a092c1c80bce" />
