@@ -38,7 +38,6 @@ To simulate credential dumping, the Sysinternals **ProcDump** utility was used t
 
 The following command was executed on the Windows endpoint:
 
-procdump64.exe -ma lsass.exe lsass.dmp
 <img width="624" height="195" alt="procdump_lsass_execution" src="https://github.com/user-attachments/assets/60ce29de-3262-4e6a-998e-a9a0d6b5d27b" />
 
 This command forces a full memory dump of the **Local Security Authority Subsystem Service (LSASS)** process.
